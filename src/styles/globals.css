@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-white bg-primary-950;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+
+  ::selection {
+    @apply bg-accent-500/30 text-white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-primary-950;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-accent-600;
+  }
+}
+
+@layer components {
+  /* Gold divider */
+  .divider-accent {
+    @apply border-accent-500/30;
+  }
+
+  /* Section label — texto dorado en mayúsculas */
+  .section-label {
+    @apply text-accent-500 text-xs font-semibold uppercase tracking-widest;
+  }
+
+  /* Gradient overlay para imágenes */
+  .img-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-primary-950/80 via-primary-950/20 to-transparent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Eliminar el triángulo nativo de <details>/<summary> */
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}

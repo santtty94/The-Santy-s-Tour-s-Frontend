@@ -1,0 +1,242 @@
+import type { Experience } from '@/types'
+
+// TODO: Eliminar este archivo cuando la API esté conectada
+// Reemplazar los usos por: import { getExperiences } from '@/lib/api'
+
+const defaultPartner = {
+  id: 1,
+  name: "Santy's Tours Partner",
+  email: 'partner@placeholder.com',
+  phone: '+34600000000',
+  commissionType: 'fixed' as const,
+  commissionValue: 20,
+  isActive: true,
+}
+
+export const MOCK_EXPERIENCES: Experience[] = [
+  {
+    id: 1,
+    slug: 'paella-cooking-experience-barcelona',
+    title: 'Paella Cooking Experience',
+    description:
+      'Sumérgete en el arte de la cocina mediterránea. Comenzamos con una visita al Mercat de la Boqueria para elegir los ingredientes más frescos y después cocinamos en un ambiente íntimo. Nuestros chefs locales compartirán contigo los secretos que ningún libro de recetas revela.',
+    shortDescription:
+      'Aprende a cocinar la auténtica paella valenciana con chefs locales y productos del mercado.',
+    price: 75,
+    commission: 20,
+    duration: '3 horas',
+    languages: ['es', 'en', 'it'],
+    maxParticipants: 12,
+    meetingPoint: 'Mercat de la Boqueria, Las Ramblas 91, Barcelona',
+    images: ['/images/exp-paella.png'],
+    category: 'gastronomia',
+    partner: defaultPartner,
+    rating: 4.9,
+    reviewCount: 127,
+    isActive: true,
+    createdAt: '2026-01-01T00:00:00Z',
+    updatedAt: '2026-01-01T00:00:00Z',
+  },
+  {
+    id: 2,
+    slug: 'tapas-flamenco-evening-barcelona',
+    title: 'Tapas and Flamenco Evening',
+    description:
+      'Una noche que combina dos pasiones del alma española: la gastronomía y el baile. Disfruta de las mejores tapas artesanales mientras contemplas una actuación de flamenco auténtico con bailaores profesionales en el corazón del Barri Gòtic.',
+    shortDescription: 'Una noche de tapas gourmet y flamenco auténtico en el corazón de Barcelona.',
+    price: 65,
+    commission: 20,
+    duration: '3.5 horas',
+    languages: ['es', 'en'],
+    maxParticipants: 30,
+    meetingPoint: 'Carrer dels Escudellers, Barri Gòtic, Barcelona',
+    images: ['/images/exp-flamenco.png'],
+    category: 'nocturna',
+    partner: defaultPartner,
+    rating: 4.8,
+    reviewCount: 89,
+    isActive: true,
+    createdAt: '2026-01-01T00:00:00Z',
+    updatedAt: '2026-01-01T00:00:00Z',
+  },
+  {
+    id: 3,
+    slug: 'montserrat-day-tour-barcelona',
+    title: 'Montserrat Day Tour',
+    description:
+      'Escápate a la montaña más emblemática de Cataluña. El macizo de Montserrat te sorprenderá con sus formaciones rocosas únicas en el mundo, el famoso monasterio benedictino y unas vistas panorámicas que te dejarán sin palabras. Incluye transporte y guía local.',
+    shortDescription: 'Excursión de un día al icónico macizo de Montserrat y su monasterio benedictino.',
+    price: 55,
+    commission: 20,
+    duration: 'Día completo (8h)',
+    languages: ['es', 'en', 'it'],
+    maxParticipants: 25,
+    meetingPoint: 'Plaça de Catalunya, Barcelona',
+    images: ['/images/exp-montserrat.png'],
+    category: 'naturaleza',
+    partner: defaultPartner,
+    rating: 4.9,
+    reviewCount: 203,
+    isActive: true,
+    createdAt: '2026-01-01T00:00:00Z',
+    updatedAt: '2026-01-01T00:00:00Z',
+  },
+  {
+    id: 4,
+    slug: 'costa-brava-kayaking-barcelona',
+    title: 'Costa Brava Kayaking',
+    description:
+      'Descubre la cara más salvaje y hermosa de la Costa Brava desde el agua. Rema entre acantilados, explora cuevas marinas accesibles solo en kayak y báñate en calas de aguas cristalinas. Apto para todos los niveles, material incluido.',
+    shortDescription: 'Explora las cuevas y calas secretas de la Costa Brava en kayak de mar.',
+    price: 80,
+    commission: 20,
+    duration: '5 horas',
+    languages: ['es', 'en'],
+    maxParticipants: 15,
+    meetingPoint: 'Platja de Canyelles, Roses, Girona',
+    images: ['/images/exp-kayaking.png'],
+    category: 'aventura',
+    partner: defaultPartner,
+    rating: 4.8,
+    reviewCount: 74,
+    isActive: true,
+    createdAt: '2026-01-01T00:00:00Z',
+    updatedAt: '2026-01-01T00:00:00Z',
+  },
+  {
+    id: 5,
+    slug: 'cocktail-making-experience-barcelona',
+    title: 'Cocktail Making Experience',
+    description:
+      'Conviértete en barman por una tarde en uno de los espacios más exclusivos de El Born. Aprenderás técnicas de mixología profesional y crearás tus propias recetas. Incluye degustación de 4 cócteles y snacks de acompañamiento.',
+    shortDescription: 'Taller de mixología profesional en uno de los cocktail bars más exclusivos del Born.',
+    price: 60,
+    commission: 20,
+    duration: '2.5 horas',
+    languages: ['es', 'en'],
+    maxParticipants: 10,
+    meetingPoint: 'El Born, Barcelona (confirmado al reservar)',
+    images: ['/images/exp-cocktail.png'],
+    category: 'gastronomia',
+    partner: defaultPartner,
+    rating: 4.7,
+    reviewCount: 56,
+    isActive: true,
+    createdAt: '2026-01-01T00:00:00Z',
+    updatedAt: '2026-01-01T00:00:00Z',
+  },
+  {
+    id: 6,
+    slug: 'wine-tasting-barcelona',
+    title: 'Local Wine Tasting',
+    description:
+      'Un viaje sensorial por los mejores vinos catalanes de la mano de un sumiller certificado. Cata de 6 vinos seleccionados del Penedès, el Priorat y el Empordà, con maridaje de quesos y embutidos artesanales catalanes.',
+    shortDescription: 'Cata exclusiva de vinos catalanes con sumiller certificado y maridaje artesanal.',
+    price: 55,
+    commission: 20,
+    duration: '2 horas',
+    languages: ['es', 'en', 'it'],
+    maxParticipants: 15,
+    meetingPoint: 'Eixample, Barcelona (confirmado al reservar)',
+    images: ['/images/exp-wine.png'],
+    category: 'gastronomia',
+    partner: defaultPartner,
+    rating: 4.9,
+    reviewCount: 91,
+    isActive: true,
+    createdAt: '2026-01-01T00:00:00Z',
+    updatedAt: '2026-01-01T00:00:00Z',
+  },
+  {
+    id: 7,
+    slug: 'ghosts-legends-tour-barcelona',
+    title: 'Ghosts and Legends Tour',
+    description:
+      'El Barri Gòtic esconde siglos de misterios, crímenes olvidados y leyendas que los manuales de historia nunca contarán. Nuestro guía te llevará por los callejones más inquietantes mientras descubres los secretos mejor guardados de Barcelona.',
+    shortDescription: 'Descubre los misterios y leyendas oscuras del Barri Gòtic con un guía especializado.',
+    price: 30,
+    commission: 20,
+    duration: '2 horas',
+    languages: ['es', 'en'],
+    maxParticipants: 20,
+    meetingPoint: 'Plaça Nova, davant la Catedral, Barcelona',
+    images: ['/images/exp-ghosts.png'],
+    category: 'cultura',
+    partner: defaultPartner,
+    rating: 4.7,
+    reviewCount: 312,
+    isActive: true,
+    createdAt: '2026-01-01T00:00:00Z',
+    updatedAt: '2026-01-01T00:00:00Z',
+  },
+  {
+    id: 8,
+    slug: 'yacht-charter-tapas-barcelona',
+    title: 'Yacht Charter with Tapas',
+    description:
+      'La experiencia definitiva. Navega a bordo de un yate privado y contempla la skyline de Barcelona desde el mar mientras disfrutas de tapas gourmet y cava catalán de primera. El capitán os guiará por las aguas más hermosas del Mediterráneo barcelonés.',
+    shortDescription: 'Navegación privada en yate con tapas gourmet y cava por las aguas de Barcelona.',
+    price: 120,
+    commission: 20,
+    duration: '3 horas',
+    languages: ['es', 'en', 'it'],
+    maxParticipants: 10,
+    meetingPoint: 'Port Olímpic, Barcelona',
+    images: ['/images/exp-yacht.png'],
+    category: 'premium',
+    partner: defaultPartner,
+    rating: 5.0,
+    reviewCount: 43,
+    isActive: true,
+    createdAt: '2026-01-01T00:00:00Z',
+    updatedAt: '2026-01-01T00:00:00Z',
+  },
+]
+
+export interface ReviewDisplay {
+  id: number
+  customerName: string
+  customerOrigin: string
+  rating: number
+  comment: string
+  experienceTitle: string
+}
+
+export const MOCK_REVIEWS: ReviewDisplay[] = [
+  {
+    id: 1,
+    customerName: 'Marco B.',
+    customerOrigin: 'Milano, Italia',
+    rating: 5,
+    comment:
+      'Esperienza incredibile! Lo chef ci ha spiegato tutto con passione e la paella è venuta perfetta. Uno dei migliori ricordi del mio viaggio a Barcellona.',
+    experienceTitle: 'Paella Cooking Experience',
+  },
+  {
+    id: 2,
+    customerName: 'Sophie W.',
+    customerOrigin: 'London, UK',
+    rating: 5,
+    comment:
+      'The yacht tour was absolutely breathtaking. Watching Barcelona from the sea while sipping cava — pure magic. Best experience of my trip, 10/10!',
+    experienceTitle: 'Yacht Charter with Tapas',
+  },
+  {
+    id: 3,
+    customerName: 'Carlos M.',
+    customerOrigin: 'Madrid, España',
+    rating: 5,
+    comment:
+      'La excursión a Montserrat superó todas mis expectativas. El guía fue excelente, muy preparado y cercano. Las vistas desde arriba son de otro mundo.',
+    experienceTitle: 'Montserrat Day Tour',
+  },
+  {
+    id: 4,
+    customerName: 'James H.',
+    customerOrigin: 'New York, USA',
+    rating: 5,
+    comment:
+      'Best walking tour in Barcelona by far. Our guide knew every secret of the Gothic Quarter. Scary, funny and incredibly informative. Highly recommended!',
+    experienceTitle: 'Ghosts and Legends Tour',
+  },
+]
