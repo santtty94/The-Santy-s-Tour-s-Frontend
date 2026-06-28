@@ -55,5 +55,5 @@ src/
 
 ## Relación con el backend
 
-Este repo solo contiene el frontend. Los datos vienen de la API (repo `santys-tours-api`).
-Para que funcione en local, Iván debe tener el backend corriendo en `http://localhost:4000`.
+Este repo solo contiene el frontend. Los datos vienen de la API (repo `The-Santy-s-Tour-s-Backend`).
+Para que funcione en local, debe tener el backend corriendo en `http://localhost:4000`.
